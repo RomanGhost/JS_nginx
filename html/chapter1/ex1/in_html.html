@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Приветствие</title>
+    <script>
+        window.onload = function() {
+            const firstName = prompt("Введите ваше имя:");
+            const lastName = prompt("Введите вашу фамилию:");
+            const greeting = `Здравствуй, ${firstName} ${lastName}!`;
+            document.getElementById('greeting').innerText = greeting;
+        };
+    </script>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+</body>
+</html>
