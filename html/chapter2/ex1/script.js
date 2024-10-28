@@ -4,16 +4,16 @@ const countries = {
     'Германия': ['Берлин', 'Мюнхен', 'Гамбург'],
 };
 
+city_country = {}
+for (let country in countries){
+    for (let city in countries[country] ){
+        city_country[city] = country;
+    }
+}
+
 function findCountry() {
     const city = document.getElementById('city').value;
-    let foundCountry = '';
-
-    for (let country in countries) {
-        if (countries[country].includes(city)) {
-            foundCountry = country;
-            break;
-        }
-    }
+    let foundCountry = city_country[city];
 
     const resultDiv = document.getElementById('result');
     resultDiv.innerText = foundCountry ? `Город ${city} находится в стране ${foundCountry}.` : `Город ${city} не найден в базе данных.`;
